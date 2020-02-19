@@ -1,0 +1,83 @@
+
+<IconButtonCalendar>:
+
+	md_bg_color:1, 1, 1, .5 
+
+	BoxLayout:
+		padding: dp(14)
+
+		MDIcon:
+			icon: "calendar"	
+			size: dp(30), dp(30)
+			size_hint: (None, None)
+			pos_hint: {'right': .1, 'top': 1.1}
+			color:rgba('#FCFCFC')
+
+
+			canvas.before:
+				Color:
+					rgba: rgba('#4876FF')
+				Ellipse:
+					size: self.size[0] +3,self.size[1] +3
+					pos: self.pos[0] - 5.3,self.pos[1] - 1
+
+	BoxLayout:
+		MDLabel:
+			text: "Сегодня"
+			text_color:.2, .2, .2, .5
+			pos_hint: {'center_y': .1, 'center_y': .2}
+			theme_text_color: 'Custom'
+
+<IconButtonClock>:
+	md_bg_color:1, 1, 1, .5 
+
+	BoxLayout:
+		padding: dp(14)
+
+		MDIcon:
+			icon: "clock"	
+			size: dp(30), dp(30)
+			size_hint: (None, None)
+			pos_hint: {'right': .1, 'top': 1.1}
+			color:rgba('#FCFCFC')
+
+			canvas.before:
+				Color:
+					rgba:rgba('#FF8000')
+				Ellipse:
+					size: self.size[0] +3,self.size[1] +3
+					pos: self.pos[0] - 5.0,self.pos[1] - 2
+
+	BoxLayout:
+		MDLabel:
+			text: "3апланированo"
+			text_color:.2, .2, .2, .5
+			pos_hint: {'center_y': .1, 'center_y': .2}
+			theme_text_color: 'Custom'
+
+<IconButtonMail>:
+	md_bg_color:1, 1, 1, .5
+	
+	BoxLayout:
+		padding: dp(14)
+
+		MDIcon:
+			icon: "mail"	
+			size: dp(35), dp(35)
+			size_hint: (None, None)
+			pos_hint: {'center_y': .9, 'center_x': .8}
+			color:rgba('#FCFCFC')
+
+			canvas.before:
+				Color:
+					rgba:rgba('#5B5B5B')
+				Ellipse:
+					size: self.size[0] -2,self.size[1] -3
+					pos: self.pos[0] - 5.3,self.pos[1] + 1
+
+	BoxLayout:
+		MDLabel:
+			text:"Все"
+			text_color:.2, .2, .2, .5
+			pos_hint: {'center_y': .1, 'center_y': .2}
+			theme_text_color: 'Custom'

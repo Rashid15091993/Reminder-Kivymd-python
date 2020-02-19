@@ -1,0 +1,289 @@
+#:import Window kivy.core.window.Window
+#:set color_shadow [0, 0, 0, .2980392156862745]
+#:include icon_button.kv
+#:import IconButtonMail iconbutton.IconButtonMail
+
+MyScreenManager:
+	id:sm
+	sm:sm
+	box:box
+	text_list:text_list
+
+	Screen:
+		name:'screen_menu'
+		canvas.before:
+			Color:
+				rgba:(0,0,0,.1)
+
+			Rectangle:
+				pos:self.pos
+				size:self.size
+
+		BoxLayout:
+			orientation: 'vertical'
+			spacing: dp(20)
+			pos_hint: {'center_x': .5, 'center_y': .5}
+
+			MDToolbar:
+				md_bg_color:(.9,.9,.9,.9)
+				size_hint_y:.3
+				spacing: dp(20)
+				
+				MDTextButton:
+					text:" Править"
+				 
+			MDTextFieldRound:
+				pos_hint: {'center_x': .5, 'center_y': .5}
+				icon_left: 'zoom'
+				hint_text: "Поиск"
+				size_hint_x:.8
+				normal_color:rgba('#D6D6D6')
+				
+			BoxLayout:
+				orientation: 'horizontal'
+				spacing: dp(20)
+				pos_hint: {'center_x': .5, 'center_y': .5}
+				size_hint_x:.9
+				size_hint_y:1
+#Button1
+				IconButtonCalendar:	
+					size_hint_x:.3
+					size_hint_y:.6
+					pos_hint: {'center_x': .5, 'center_y': .7}
+			
+					AnchorLayout:
+						anchor_x:'right'
+						anchor_y:'top'
+						padding: dp(20)
+						
+						MDLabel:
+							size_hint: (None, None)
+							id:label1
+							text:"0"
+							font_style:'H4'
+							text_color:0,0,0,1
+							size_hint_x:.2
+							size_hint_y:.5
+#Button2
+				IconButtonClock:	
+					size_hint_x:.3
+					size_hint_y:.6
+					pos_hint: {'center_x': .5, 'center_y': .7}
+
+					AnchorLayout:
+						anchor_x:'right'
+						anchor_y:'top'
+						padding: dp(20)
+
+						MDLabel:
+							id:label1
+							text:"0"
+							font_style:'H4'
+							text_color:0,0,0,1
+							size_hint_x:.2
+							size_hint_y:.3
+
+			FloatLayout:
+#Button3
+				IconButtonMail:	
+					size_hint_x:.9
+					size_hint_y:0.6
+					pos_hint: {'x': 0.05, 'y': .8}
+
+					AnchorLayout:
+						anchor_x:'right'
+						anchor_y:'top'
+						padding: dp(20)
+
+						MDLabel:
+							id:label1
+							text:"0"
+							font_style:'H4'
+							theme_text_color: 'Primary'
+							size_hint_x:.1
+							size_hint_y:.3
+			FloatLayout:
+
+
+				MDLabel:
+					text:"Мои списки"
+					halign: 'left'
+					valign:'center'
+					font_style:'H6'
+					text_color:0,0,0,1
+					pos_hint: {'x': 0.05, 'y': 1.2}
+							
+				GridLayout:
+					id:box				
+					cols:1
+					spacing: dp(10)
+					padding: dp(20)
+					pos_hint: { 'y': .7}
+						
+		MDToolbar:
+			md_bg_color:(.9,.9,.9,.9)
+			size_hint_y:0.07
+
+			MDTextButton:
+				text:"Добавить список"
+				on_release:sm.current = 'screen_list'
+#Screen 2 list 
+	ListScreen:
+		name:'screen_list'
+		orientation: 'vertical'
+
+		canvas.before:
+			Color:
+				rgba:(0,0,0,.1)
+
+			Rectangle:
+				pos:self.pos
+				size:self.size
+			
+		MDIcon:
+			icon: "menu"
+			size: dp(40), dp(40)
+			size_hint: (None, None)		
+			pos_hint: {'center_x': .5, 'center_y': .7}
+
+			canvas:
+				Color:
+					rgba: .1, .0, .0, .5
+
+				Ellipse:
+					size: 50,50
+					pos: self.center_x -33,self.center_y-25
+
+		MDTextFieldRound:
+			id:text_list
+			pos_hint: {'center_x': .5, 'center_y': .5}
+			size_hint_x: .8
+			normal_color:0,0,0,.1
+
+		BoxLayout:
+			orientation: 'vertical'
+			pos_hint: {'center_x': .5, 'center_y':.3}
+			size_hint_x:.4
+			size_hint_y:.1
+
+			GridLayout:
+				cols:6
+				spacing: dp(40)
+				pos_hint: {'center_x': .5, 'center_y':.5}
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#F08080')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#CD9B1D')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#FFD700')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#00C957')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#1C86EE')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#B23AEE')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+				MDIconButton:
+					size: dp(40), dp(40)
+					size_hint: (None, None)
+
+					canvas:
+						Color:
+							rgba:rgba('#8B7D6B')
+						Ellipse:
+							size: self.size
+							pos: self.pos
+						Color:
+							rgba: 0, 0, 0, 1
+
+		AnchorLayout:
+			anchor_x:'left'
+			anchor_y:'top'
+
+			MDTextButton:	
+				text:"Oтменить"
+				on_release:sm.current = 'screen_menu'
+				
+		AnchorLayout:
+			anchor_x:'right'
+			anchor_y:'top'
+
+			MDTextButton:
+				text:"Готовa"
+				on_release:root.add_list()
+				on_release:sm.current = 'screen_menu'
+
+
+
+		
+
+
+
+				
+

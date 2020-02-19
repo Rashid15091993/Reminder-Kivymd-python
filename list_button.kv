@@ -1,0 +1,20 @@
+<ListButton>:
+
+	AnchorLayout:
+		anchor_x:'left'
+		
+		MDIcon:
+			icon: "menu"
+			size: dp(40), dp(40)
+			size_hint: (None, None)
+			color:rgba('#FCFCFC')
+					
+			canvas.before:
+				Color:
+					rgba:.1, .5, .9, .5
+
+				Ellipse:
+					size: self.size[0] -2,self.size[1] -3
+					pos: self.pos[0] - 4,self.pos[1] - 1
+
+	
